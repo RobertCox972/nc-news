@@ -19,7 +19,7 @@ const Topics = () => {
 			<h1>Available Topics</h1>
 			{setAvailableTopics.map(({ slug, description }) => {
 				return (
-					<Link to={`/articles/${slug}`}>
+					<Link to={`/articles/${slug}`} key={slug}>
 						<div className="articleList-item">{slug}</div>
 					</Link>
 				);
