@@ -29,10 +29,10 @@ const ArticlesList = () => {
 			)}
 			{availableArticles.map(({ article_id, title, topic, body }) => {
 				return (
-					<Link to={`/articles/${article_id}`} key={article_id}>
+					<Link to={`/article/${article_id}`} key={article_id}>
 						<div className="articleList-item">
 							{title}
-							<div className="articleBody">{body}</div>
+							<div className="articleListBody">{body}</div>
 						</div>
 					</Link>
 				);

@@ -71,14 +71,37 @@ header-link:visited {
 	border-style: solid;
 	border-color: black;
 	margin: 3%;
+	text-align: center;
 }
-.articleBody {
-	font-size: 12px;
+.articleListBody {
+	font-size: 0.8em;
 	color: black;
 	overflow: hidden;
 	white-space: nowrap;
 	text-overflow: ellipsis;
 	max-width: 100%;
 	max-height: 60%;
-	margin-bottom: 5%;
+	margin-bottom: 2%;
+	color: black;
+}
+.article {
+	font-size: 1em;
+	color: black;
+	max-width: 100%;
+	max-height: 60%;
+	margin-bottom: 2%;
+	margin-left: 2%;
+	margin-right: 2%;
+	color: black;
+}
+.article-small {
+	text-align: right;
+	font-size: 0.8em;
+	color: black;
+	max-width: 100%;
+	max-height: 60%;
+	margin-bottom: 2%;
+	margin-left: 2%;
+	margin-right: 2%;
+	color: black;
 }
