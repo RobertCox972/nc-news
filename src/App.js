@@ -1,6 +1,7 @@
 import Header from './components/header';
 import Articles from './components/articles';
 import Topics from './components/topics';
+import Article from './components/article';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
 
@@ -15,6 +16,7 @@ function App() {
 						<Route path="/topics" element={<Topics />} />
 						<Route path="/articles/:topic" element={<Articles />} />
 						<Route path="/articles" element={<Articles />} />
+						<Route path="/article/:article_id" element={<Article />} />
 					</Routes>
 				</header>
 			</div>
