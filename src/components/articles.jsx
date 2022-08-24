@@ -1,22 +1,18 @@
 import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-const axios = require('axios');
+import { fetchArticleByTopic } from '../utils/api';
 
 const ArticlesList = () => {
 	const [availableArticles, setAvailableArticles] = useState([]);
 	const { topic } = useParams();
 	const [isLoading, setIsLoading] = useState(true);
 	useEffect(() => {
-		axios
-
-			.get('https://r-cox-be-nc-news.herokuapp.com/api/articles', {
-				params: { topic },
-			})
-			.then((response) => {
-				setAvailableArticles(response.data.articles);
-				setIsLoading(false);
-			});
+		fetchArticleByTopic(topic).then((response) => {
+			setAvailableArticles(response.data.articles);
+			setIsLoading(false);
+		});
 	}, [topic]);
+
 	return isLoading ? (
 		<h3>Loading Articles</h3>
 	) : (

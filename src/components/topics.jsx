@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-const axios = require('axios');
+import { fetchTopics } from '../utils/api';
 
 const Topics = () => {
 	const [setAvailableTopics, setAvailableTopicssetAvailableTopics] = useState(
@@ -8,11 +8,9 @@ const Topics = () => {
 	);
 
 	useEffect(() => {
-		axios
-			.get('https://r-cox-be-nc-news.herokuapp.com/api/topics')
-			.then((response) => {
-				setAvailableTopicssetAvailableTopics(response.data.topics);
-			});
+		fetchTopics().then((response) => {
+			setAvailableTopicssetAvailableTopics(response.data.topics);
+		});
 	}, []);
 	return (
 		<section className="body">
