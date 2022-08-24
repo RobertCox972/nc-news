@@ -94,14 +94,28 @@ header-link:visited {
 	margin-right: 2%;
 	color: black;
 }
+#article-lower {
+	text-align: center;
+	display: grid;
+	justify-content: center;
+	justify-items: stretch;
+	grid-template-columns: 30% auto;
+	grid-template-rows: auto auto;
+	column-gap: normal;
+	grid-template-areas: 'left right';
+}
 .article-small {
-	text-align: right;
+	text-align: center;
 	font-size: 0.8em;
 	color: black;
 	max-width: 100%;
 	max-height: 60%;
+	margin-top: 5%;
 	margin-bottom: 2%;
 	margin-left: 2%;
 	margin-right: 2%;
 	color: black;
+}
+.voteImage {
+	width: 20px;
 }
