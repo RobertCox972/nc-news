@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
+import Votes from './Votes.jsx';
 import { Link, useParams } from 'react-router-dom';
-import { fetchArticle } from '../utils/api';
+import { fetchArticle, patchVotes } from '../utils/api';
 
 const Article = () => {
 	const [availableArticle, setAvailableArticle] = useState([]);
@@ -13,7 +14,7 @@ const Article = () => {
 			setIsLoading(false);
 		});
 	}, [article_id]);
-	const { title, author, comment_count, body } = availableArticle;
+	const { title, author, comment_count, body, votes } = availableArticle;
 	return isLoading ? (
 		<h3>Loading Articles</h3>
 	) : (
@@ -21,11 +22,11 @@ const Article = () => {
 			<div className="articleList-item">
 				<h3>{title}</h3>
 				<div className="article">{body}</div>
-				<div>
-					<Link to={`/comment/${article_id}`}>
-						<div className="article">Comments({comment_count})</div>
-					</Link>
-					<div className="article-small">Author: ({author})</div>
+				<Link to={`/comment/${article_id}`}>
+					<div className="article">Comments({comment_count})</div>
+				</Link>
+				<div id="lower-article">
+					<Votes votes={votes} article_id={article_id} />
 				</div>
 			</div>
 		</section>
