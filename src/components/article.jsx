@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-import Votes from './votes.jsx';
 import { Link, useParams } from 'react-router-dom';
 import { fetchArticle } from '../utils/api';
+import Votes from './votes.jsx';
 
 const Article = () => {
 	const [availableArticle, setAvailableArticle] = useState([]);
