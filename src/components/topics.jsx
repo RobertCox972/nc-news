@@ -3,19 +3,17 @@ import { Link } from 'react-router-dom';
 import { fetchTopics } from '../utils/api';
 
 const Topics = () => {
-	const [setAvailableTopics, setAvailableTopicssetAvailableTopics] = useState(
-		[]
-	);
+	const [AvailableTopics, setAvailableTopics] = useState([]);
 
 	useEffect(() => {
 		fetchTopics().then((response) => {
-			setAvailableTopicssetAvailableTopics(response.data.topics);
+			setAvailableTopics(response.data.topics);
 		});
 	}, []);
 	return (
 		<section className="body">
 			<h1>Available Topics</h1>
-			{setAvailableTopics.map(({ slug, description }) => {
+			{AvailableTopics.map(({ slug, description }) => {
 				return (
 					<Link to={`/articles/${slug}`} key={slug}>
 						<div className="articleList-item">{slug}</div>
