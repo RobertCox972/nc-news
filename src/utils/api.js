@@ -22,3 +22,8 @@ export function patchVotes(article_id) {
 		{ inc_votes: 1 }
 	);
 }
+export function fetchComments(article_id) {
+	return axios.get(
+		`https://r-cox-be-nc-news.herokuapp.com/api/articles/${article_id}/comments`
+	);
+}
