@@ -3,6 +3,7 @@ import Articles from './components/articles';
 import Topics from './components/topics';
 import Article from './components/article';
 import Comments from './components/comments';
+import CreateComment from './components/createComment';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
 
@@ -21,6 +22,10 @@ function App() {
 						<Route
 							path="/article/:article_id/comments"
 							element={<Comments />}
+						/>
+						<Route
+							path="/article/:article_id/createcomment"
+							element={<CreateComment />}
 						/>
 					</Routes>
 				</header>

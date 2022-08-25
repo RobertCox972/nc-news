@@ -27,3 +27,10 @@ export function fetchComments(article_id) {
 		`https://r-cox-be-nc-news.herokuapp.com/api/articles/${article_id}/comments`
 	);
 }
+export function postComment(article_id, textBody) {
+	console.log(textBody);
+	return axios.post(
+		`https://r-cox-be-nc-news.herokuapp.com/api/articles/${article_id}/comments`,
+		{ username: 'tickle122', body: textBody }
+	);
+}
