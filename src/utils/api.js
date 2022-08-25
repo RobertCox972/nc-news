@@ -15,11 +15,11 @@ export function fetchArticleByTopic(topic) {
 export function fetchTopics() {
 	return axios.get('https://r-cox-be-nc-news.herokuapp.com/api/topics');
 }
-export function patchVotes(article_id) {
+export function patchVotes(article_id, increment) {
 	return axios.patch(
 		`https://r-cox-be-nc-news.herokuapp.com/api/articles/${article_id}`,
 
-		{ inc_votes: 1 }
+		{ inc_votes: increment }
 	);
 }
 export function fetchComments(article_id) {

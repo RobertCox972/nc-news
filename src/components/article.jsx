@@ -26,7 +26,7 @@ const Article = () => {
 					<div className="article">Comments({comment_count})</div>
 				</Link>
 				<div id="lower-article">
-					<Votes votes={votes} id={article_id} type="article" />
+					<Votes votes={votes} article_id={article_id} />
 				</div>
 			</div>
 		</section>
