@@ -6,23 +6,13 @@ import voteDownImage from '../images/voteDownArrow.png';
 const Votes = ({ votes, article_id }) => {
 	const [voteIncrement, setVoteIncrement] = useState(0);
 
-	const incrementVotesUp = () => {
+	const incrementVotes = (increment) => {
 		setVoteIncrement((currVoteIncrement) => {
-			return currVoteIncrement + 1;
+			return currVoteIncrement + increment;
 		});
 		patchVotes(article_id).catch(() => {
 			setVoteIncrement((currVoteIncrement) => {
-				return currVoteIncrement - 1;
-			});
-		});
-	};
-	const incrementVotesDown = () => {
-		setVoteIncrement((currVoteIncrement) => {
-			return currVoteIncrement - 1;
-		});
-		patchVotes(article_id).catch(() => {
-			setVoteIncrement((currVoteIncrement) => {
-				return currVoteIncrement + 1;
+				return currVoteIncrement - increment;
 			});
 		});
 	};
@@ -34,13 +24,13 @@ const Votes = ({ votes, article_id }) => {
 					src={voteUpImage}
 					className="voteImage"
 					alt="vote up"
-					onClick={incrementVotesUp}
+					onClick={() => incrementVotes(+1)}
 				/>
 				<img
 					src={voteDownImage}
 					className="voteImage"
 					alt="vote down"
-					onClick={incrementVotesDown}
+					onClick={() => incrementVotes(-1)}
 				/>
 			</div>
 		);
