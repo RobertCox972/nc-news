@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { fetchComments } from '../utils/api';
 import { fetchArticle } from '../utils/api';
 import Votes from './votes';
@@ -29,7 +29,10 @@ const ViewComments = () => {
 			{availableComments < 1 ? (
 				<h3>No articles to show</h3>
 			) : (
-				<h4>{availableComments.length} comments</h4>
+				<div>
+					<h4>{availableComments.length} comments</h4>
+					<Link to={`/article/${article_id}/createcomment`}>Add a comment</Link>
+				</div>
 			)}
 			{availableComments.map(({ body, comment_id, author, votes }) => {
 				return (

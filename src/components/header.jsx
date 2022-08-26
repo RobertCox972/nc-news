@@ -1,10 +1,11 @@
 import Search from './search.jsx';
+import logo from '../images/nc-news.png';
 
 const header = () => {
 	return (
 		<div className="header">
 			<a className="header" href="/">
-				<img src="" alt="NC News logo" />
+				<img src={logo} alt="NC News logo" />
 			</a>
 			<div className="nav">
 				<a className="header-link" href="/articles/">

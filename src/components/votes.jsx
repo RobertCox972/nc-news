@@ -4,7 +4,6 @@ import voteUpImage from '../images/voteUpArrow.png';
 import voteDownImage from '../images/voteDownArrow.png';
 
 const Votes = ({ votes, article_id }) => {
-	console.log(article_id);
 	const [voteIncrement, setVoteIncrement] = useState(0);
 
 	const incrementVotes = (increment) => {
