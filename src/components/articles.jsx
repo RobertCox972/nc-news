@@ -4,7 +4,7 @@ import { fetchArticleByTopic, fetchTopics } from '../utils/api';
 
 const ArticlesList = () => {
 	const [availableArticles, setAvailableArticles] = useState([]);
-	const [AvailableTopics, setAvailableTopics] = useState([]);
+	const [availableTopics, setAvailableTopics] = useState([]);
 	const { topic } = useParams();
 	const [isLoading, setIsLoading] = useState(true);
 	useEffect(() => {
@@ -31,7 +31,7 @@ const ArticlesList = () => {
 			[name]: value,
 		});
 	};
-	const handlePost = (event) => {
+	const handleSubmit = (event) => {
 		setIsLoading(true);
 		fetchArticleByTopic(values.topic, values.sort_by, values.order).then(
 			(response) => {
@@ -69,7 +69,7 @@ const ArticlesList = () => {
 				</select>
 				<select name="topic" value={values.topic} onChange={GetData}>
 					<option value={topic || ''}>{topic || 'All'}</option>
-					{AvailableTopics.map(({ slug, description }) => {
+					{availableTopics.map(({ slug, description }) => {
 						return (
 							<option value={slug} key={slug}>
 								{slug}
@@ -77,7 +77,7 @@ const ArticlesList = () => {
 						);
 					})}
 				</select>
-				<button type="button" onClick={() => handlePost()}>
+				<button type="button" onClick={() => handleSubmit()}>
 					Sort
 				</button>
 			</form>
