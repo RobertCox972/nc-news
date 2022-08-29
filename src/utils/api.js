@@ -6,9 +6,10 @@ export function fetchArticle(article_id) {
 	);
 }
 
-export function fetchArticleByTopic(topic) {
+export function fetchArticleByTopic(topic, sort_by, order) {
+	//console.log(topic, sort_by, order);
 	return axios.get('https://r-cox-be-nc-news.herokuapp.com/api/articles', {
-		params: { topic },
+		params: { topic, sort_by, order },
 	});
 }
 
